@@ -1,49 +1,69 @@
-const currencies = [
-  "ILS","USD","EUR","GBP","JOD","EGP","SAR","AED","QAR",
-  "KWD","TRY","CAD","AUD","JPY","CNY","CHF"
-];
+/* Full Screen على الموبايل */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background: #000; /* خلفية سوداء للنيون */
+  color: #fff;
+  overflow: hidden;
+}
 
-const fromSelect = document.getElementById("from");
-const toSelect = document.getElementById("to");
-const resultDiv = document.getElementById("result");
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
 
-// تعبئة القوائم
-currencies.forEach(cur => {
-  fromSelect.innerHTML += `<option value="${cur}">${cur}</option>`;
-  toSelect.innerHTML += `<option value="${cur}">${cur}</option>`;
-});
+h1 {
+  color: #0ff; /* أزرق نيون */
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+  margin-bottom: 5px;
+}
 
-fromSelect.value = "ILS";
-toSelect.value = "USD";
+.address, .subtitle, .dedication, .credit, .phone {
+  margin: 5px 0;
+  color: #0f0; /* أخضر نيون */
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+}
 
-function convert() {
-  const amount = document.getElementById("amount").value;
-  const from = fromSelect.value;
-  const to = toSelect.value;
+.converter input, .converter select, .converter button {
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
 
-  if (!amount) {
-    resultDiv.style.color = "#ff4444";
-    resultDiv.innerText = "⚠️ أدخل المبلغ أولاً";
-    return;
-  }
+.converter input, .converter select {
+  width: 150px;
+}
 
-  resultDiv.style.color = "#00fff0";
-  resultDiv.innerText = "⏳ جاري التحويل...";
+.converter button {
+  background: #0ff;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+}
 
-  fetch(`https://open.er-api.com/v6/latest/${from}`)
-    .then(res => res.json())
-    .then(data => {
-      const rate = data.rates[to];
-      const converted = (amount * rate).toFixed(2);
-      
-      // النتيجة بنمط نيون أخضر
-      resultDiv.innerHTML = `
-        <div style="color: #00ff99; text-shadow: 0 0 10px #00ff99;">
-          ${amount} ${from} = ${converted} ${to}
-        </div>`;
-    })
-    .catch(() => {
-      resultDiv.style.color = "#ff4444";
-      resultDiv.innerText = "❌ خطأ في الاتصال";
-    });
+.converter button:hover {
+  background: #0aa;
+}
+
+#result {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #ff0; /* أصفر نيون */
+  text-shadow: 0 0 5px #ff0, 0 0 10px #ff0;
+}
+
+/* النصوص السفلية */
+.credit, .dedication, .phone {
+  font-size: 14px;
+  color: #f0f;
+  text-shadow: 0 0 5px #f0f;
 }
