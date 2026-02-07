@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مكتب نضال الغول للحوالات المالية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>💱 مكتب نضال الغول للحوالات المالية</h1>
+
+    <p class="address">
+      العنوان: خانيونس – مفترق النص – بجوار محطة اللحام
+    </p>
+
+    <p class="phone">📞 0597607282</p>
+
+    <h2>أسعار العملات المباشرة</h2>
+
+    <div class="converter">
+      <input type="number" id="amount" placeholder="أدخل المبلغ">
+
+      <select id="from"></select>
+      <select id="to"></select>
+
+      <button onclick="convert()">تحويل</button>
+
+      <div id="result"></div>
+    </div>
+
+    <footer>
+      <p>إهداء من رامي عدوان للغالي الجوهري</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

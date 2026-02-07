@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: Tahoma, Arial;
+  background: radial-gradient(circle, #0f2027, #000);
+  color: #fff;
+}
+
+.container {
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.8);
+  box-shadow: 0 0 25px #00fff0;
+  text-align: center;
+}
+
+h1 {
+  color: #00fff0;
+  text-shadow: 0 0 10px #00fff0;
+}
+
+h2 {
+  margin-top: 20px;
+  color: #ff00ff;
+}
+
+.address, .phone {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.converter {
+  margin-top: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #00fff0, #ff00ff);
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00fff0;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#result {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #00ff99;
+}
+
+footer {
+  margin-top: 25px;
+  font-size: 13px;
+  color: #aaa;
+}
